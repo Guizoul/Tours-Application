@@ -1,5 +1,5 @@
-## Travel application
+## Tours application
 
-##### travel app is a web application developed for displaying available tours details and related informations and much more functionnalities.
+##### tours app is a web application developed for displaying available tours details and related informations and more functionnalities.
 
-##### Used technologies: NodeJs | HTML | CSS | JS | ExpressJs | MongoDB
+##### Used technologies: HTML | CSS | JS | NodeJs | ExpressJs | MongoDB
