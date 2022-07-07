@@ -2,6 +2,7 @@ const Tour = require('../models/tourModel');
 
 exports.getAllTours = (req, res) => {
   try {
+    console.log(req.query);
     const tours = Tour.find();
 
     res.status(200).json({
