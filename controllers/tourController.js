@@ -1,6 +1,7 @@
 const Tour = require('../models/tourModel');
 
 exports.getAllTours = (req, res) => {
+  console.log(req.query);
   try {
     const tours = Tour.find();
 
