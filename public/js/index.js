@@ -3,7 +3,6 @@ import '@babel/polyfill';
 import { displayMap } from './mapbox';
 import { login, logout } from './login';
 import { updateSettings } from './updateSettings';
-import { showAlert } from './alerts';
 
 // DOM ELEMENTS
 const mapBox = document.getElementById('map');
@@ -38,8 +37,6 @@ if (userDataForm)
     console.log(form);
 
     updateSettings(form, 'data');
-
-    console.log('updated!');
   });
 
 if (userPasswordForm)
