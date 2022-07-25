@@ -38,6 +38,8 @@ if (userDataForm)
     console.log(form);
 
     updateSettings(form, 'data');
+
+    console.log('updated!');
   });
 
 if (userPasswordForm)
