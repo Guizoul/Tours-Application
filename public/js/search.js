@@ -5,6 +5,7 @@ import { showAlert } from './alerts';
 console.log('here is the search part');
 export const search = async (keyword) => {
   const slug = keyword.toLowerCase().split(' ').join('-');
+  console.log(keyword);
   try {
     showAlert('success', 'searching for tours ...');
     const res = await axios({
@@ -12,7 +13,7 @@ export const search = async (keyword) => {
       url: `http://127.0.0.1:3000/api/v1/tours?slug=${slug}`,
     });
 
-    if (res.data.status === 'success') {
+    if (res.data.status === 'success' && res.data.results != 0) {
       showAlert('success', res.data.title);
       console.log('success woooooooolllee');
       window.setTimeout(() => {
@@ -23,5 +24,3 @@ export const search = async (keyword) => {
     showAlert('error', `sorry!  no  results for ${keyword}`);
   }
 };
-
-search('THE SEA EXPLORER');

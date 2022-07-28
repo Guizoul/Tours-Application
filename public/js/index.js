@@ -12,6 +12,7 @@ const logOutBtn = document.querySelector('.nav__el--logout');
 const userDataForm = document.querySelector('.form-user-data');
 const userPasswordForm = document.querySelector('.form-user-password');
 const searchForm = document.querySelector('.nav__search');
+const searchBtn = document.querySelector('.nav__search-btn');
 
 // DELEGATION
 if (mapBox) {
@@ -65,11 +66,17 @@ if (userPasswordForm)
     document.getElementById('password-confirm').value = '';
   });
 
-if (searchForm) {
-  searchForm.addEventListener('submit', async (e) => {
-    e.preventDefault();
-    const searchKeyword = document.querySelector('.nav__search-input');
-    await search(searchKeyword.value);
-    searchKeyword.value = '';
-  });
-}
+// if (searchForm) {
+//   searchForm.addEventListener('submit', async (e) => {
+//     e.preventDefault();
+//     const searchKeyword = document.querySelector('.nav__search-input');
+//     searchBtn.addEventListener('click', (evt) => {
+//       evt.preventDefault();
+
+//       if (searchKeyword.value) {
+//         search(searchKeyword.value);
+//       }
+//     });
+//     searchKeyword.value = '';
+//   });
+// }
