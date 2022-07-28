@@ -3,6 +3,7 @@ import '@babel/polyfill';
 import { displayMap } from './mapbox';
 import { login, logout } from './login';
 import { updateSettings } from './updateSettings';
+import { search } from './search';
 
 // DOM ELEMENTS
 const mapBox = document.getElementById('map');
@@ -10,6 +11,7 @@ const loginForm = document.querySelector('.form--login');
 const logOutBtn = document.querySelector('.nav__el--logout');
 const userDataForm = document.querySelector('.form-user-data');
 const userPasswordForm = document.querySelector('.form-user-password');
+const searchForm = document.querySelector('.nav__search');
 
 // DELEGATION
 if (mapBox) {
@@ -57,3 +59,12 @@ if (userPasswordForm)
     document.getElementById('password').value = '';
     document.getElementById('password-confirm').value = '';
   });
+
+if (searchForm) {
+  searchForm.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const searchKeyword = document.querySelector('.nav__search-input');
+    await search(searchKeyword.value);
+    searchKeyword.value = '';
+  });
+}
