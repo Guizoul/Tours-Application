@@ -11380,13 +11380,13 @@ var search = /*#__PURE__*/function () {
       while (1) {
         switch (_context.prev = _context.next) {
           case 0:
-            _context.prev = 0;
             slug = keyword.toLowerCase().split(' ').join('-');
+            _context.prev = 1;
             (0, _alerts.showAlert)('success', 'searching for tours ...');
             _context.next = 5;
             return (0, _axios.default)({
               method: 'GET',
-              url: "http://127.0.0.1:3000/tour/".concat(slug)
+              url: "http://127.0.0.1:3000/api/v1/tours?slug=".concat(slug)
             });
 
           case 5:
@@ -11394,6 +11394,7 @@ var search = /*#__PURE__*/function () {
 
             if (res.data.status === 'success') {
               (0, _alerts.showAlert)('success', res.data.title);
+              console.log('success woooooooolllee');
               window.setTimeout(function () {
                 location.assign("/tour/".concat(slug));
               }, 1500);
@@ -11404,15 +11405,15 @@ var search = /*#__PURE__*/function () {
 
           case 9:
             _context.prev = 9;
-            _context.t0 = _context["catch"](0);
-            (0, _alerts.showAlert)('error', 'sorry!  no  results');
+            _context.t0 = _context["catch"](1);
+            (0, _alerts.showAlert)('error', "sorry!  no  results for ".concat(keyword));
 
           case 12:
           case "end":
             return _context.stop();
         }
       }
-    }, _callee, null, [[0, 9]]);
+    }, _callee, null, [[1, 9]]);
   }));
 
   return function search(_x) {
@@ -11421,6 +11422,7 @@ var search = /*#__PURE__*/function () {
 }();
 
 exports.search = search;
+search('THE SEA EXPLORER');
 },{"axios":"../../node_modules/axios/index.js","./alerts":"alerts.js"}],"index.js":[function(require,module,exports) {
 "use strict";
 
