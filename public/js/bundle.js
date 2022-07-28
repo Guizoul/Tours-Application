@@ -11730,9 +11730,9 @@ if (userDataForm) userDataForm.addEventListener('submit', function (e) {
   form.append('name', document.getElementById('name').value);
   form.append('email', document.getElementById('email').value);
   form.append('photo', document.getElementById('photo').files[0]);
-  console.log(form);
   (0, _updateSettings.updateSettings)(form, 'data');
 });
+console.log(document.getElementById('name').value, document.getElementById('email').value, document.getElementById('photo').files[0]);
 if (userPasswordForm) userPasswordForm.addEventListener('submit', /*#__PURE__*/function () {
   var _ref = _asyncToGenerator( /*#__PURE__*/_regeneratorRuntime().mark(function _callee(e) {
     var passwordCurrent, password, passwordConfirm;
