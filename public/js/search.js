@@ -10,7 +10,7 @@ export const search = async (keyword) => {
     showAlert('success', 'searching for tours ...');
     const res = await axios({
       method: 'GET',
-      url: `http://127.0.0.1:3000/api/v1/tours?slug=${slug}`,
+      url: `/api/v1/tours?slug=${slug}`,
     });
 
     if (res.data.status === 'success' && res.data.results != 0) {
