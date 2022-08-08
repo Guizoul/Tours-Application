@@ -1,7 +1,7 @@
 {
-  "name": "restaurant-finder",
+  "name": "tours-app",
   "version": "1.0.0",
-  "description": "Finding restaurants (locations, details...)",
+  "description": "Finding tours (locations, details...)",
   "main": "app.js",
   "scripts": {
     "start": "node server.js",
